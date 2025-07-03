@@ -1,0 +1,11 @@
+C:\Users\Ana\Projects\UsersManager.Domain\bin\Debug\net9.0\UsersManager.Domain.deps.json
+C:\Users\Ana\Projects\UsersManager.Domain\bin\Debug\net9.0\UsersManager.Domain.dll
+C:\Users\Ana\Projects\UsersManager.Domain\bin\Debug\net9.0\UsersManager.Domain.pdb
+C:\Users\Ana\Projects\UsersManager.Domain\obj\Debug\net9.0\UsersManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ana\Projects\UsersManager.Domain\obj\Debug\net9.0\UsersManager.Domain.AssemblyInfoInputs.cache
+C:\Users\Ana\Projects\UsersManager.Domain\obj\Debug\net9.0\UsersManager.Domain.AssemblyInfo.cs
+C:\Users\Ana\Projects\UsersManager.Domain\obj\Debug\net9.0\UsersManager.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Ana\Projects\UsersManager.Domain\obj\Debug\net9.0\UsersManager.Domain.dll
+C:\Users\Ana\Projects\UsersManager.Domain\obj\Debug\net9.0\refint\UsersManager.Domain.dll
+C:\Users\Ana\Projects\UsersManager.Domain\obj\Debug\net9.0\UsersManager.Domain.pdb
+C:\Users\Ana\Projects\UsersManager.Domain\obj\Debug\net9.0\ref\UsersManager.Domain.dll
