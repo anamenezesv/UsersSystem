@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ana\\Projects\\UsersManager.Domain\\UsersManager.Domain.csproj": {}
+    "C:\\Users\\Ana\\Projects\\UsersSystem\\UsersManager.Domain\\UsersManager.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ana\\Projects\\UsersManager.Domain\\UsersManager.Domain.csproj": {
+    "C:\\Users\\Ana\\Projects\\UsersSystem\\UsersManager.Domain\\UsersManager.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ana\\Projects\\UsersManager.Domain\\UsersManager.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Ana\\Projects\\UsersSystem\\UsersManager.Domain\\UsersManager.Domain.csproj",
         "projectName": "UsersManager.Domain",
-        "projectPath": "C:\\Users\\Ana\\Projects\\UsersManager.Domain\\UsersManager.Domain.csproj",
+        "projectPath": "C:\\Users\\Ana\\Projects\\UsersSystem\\UsersManager.Domain\\UsersManager.Domain.csproj",
         "packagesPath": "C:\\Users\\Ana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ana\\Projects\\UsersManager.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Ana\\Projects\\UsersSystem\\UsersManager.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
