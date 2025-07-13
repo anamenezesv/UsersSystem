@@ -1,42 +1,41 @@
 using Microsoft.AspNetCore.Mvc;
 using UsersManager.Domain.Entities;
+using UsersManager.Domain.Interfaces;
 
 namespace UsersManager.Controllers
 {
     [ApiController]
     [Route("api/users")]
-    public class UsersController : ControllerBase
+    public class UsersController(IUsersService service) : ControllerBase
     {
-        private readonly UsersManager usersManager = new UsersManager();
-
         [HttpGet]
         public IEnumerable<User> Get()
         {
-            return usersManager.GetUsers();
+            return service.GetUsers();
         }
 
         [HttpGet("{id}")]
         public User? GetUser(Guid id)
         {
-            return usersManager.GetUserById(id);
+            return service.GetUserById(id);
         }
 
         [HttpPost]
         public void Add(User user)
         {
-            usersManager.AddUser(user);
+            service.AddUser(user);
         }
 
         [HttpPut("{id}")]
         public void Update(Guid id, User user)
         {
-            usersManager.UpdateUser(id, user);
+            service.UpdateUser(id, user);
         }
 
         [HttpDelete("{id}")]
         public void Delete(Guid id)
         {
-            usersManager.DeleteUser(id);
+            service.DeleteUser(id);
         }
     }
 }
