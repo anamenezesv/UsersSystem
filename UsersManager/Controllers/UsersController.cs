@@ -21,15 +21,15 @@ namespace UsersManager.Controllers
         }
 
         [HttpPost]
-        public void Add(User user)
+        public void Add(string userName)
         {
-            service.AddUser(user);
+            service.AddUser(userName);
         }
 
         [HttpPut("{id}")]
-        public void Update(Guid id, User user)
+        public void Update(Guid id, string userName)
         {
-            service.UpdateUser(id, user);
+            service.UpdateUser(id, userName);
         }
 
         [HttpDelete("{id}")]

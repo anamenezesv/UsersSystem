@@ -6,8 +6,8 @@ namespace UsersManager.Domain.Interfaces
     {
         List<User> GetUsers();
         User? GetUserById(Guid userId);
-        void AddUser(User newUser);
-        void UpdateUser(Guid id, User user);
+        void AddUser(string userName);
+        void UpdateUser(Guid id, string userName);
         void DeleteUser(Guid userId);
     }
 }

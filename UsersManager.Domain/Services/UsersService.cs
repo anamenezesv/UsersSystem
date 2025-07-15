@@ -17,17 +17,23 @@ namespace UsersManager.Domain.Services
             return users.FirstOrDefault(u => u.Id == userId);
         }
 
-        public void AddUser(User newUser)
+        public void AddUser(string userName)
         {
+            User newUser = new User()
+            {
+                Id = Guid.NewGuid(),
+                Name = userName,
+            };
+
             users.Add(newUser);
         }
 
-        public void UpdateUser(Guid id, User user)
+        public void UpdateUser(Guid id, string userName)
         {
             var userToUpdate = users.FirstOrDefault(u => u.Id == id);
 
             if (userToUpdate != null)
-                userToUpdate.Name = user.Name;
+                userToUpdate.Name = userName;
             else
                 throw new Exception();
         }
