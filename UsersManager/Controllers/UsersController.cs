@@ -1,6 +1,8 @@
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using UsersManager.Domain.Entities;
 using UsersManager.Domain.Interfaces;
+using UsersManager.Domain.Services;
 
 namespace UsersManager.Controllers
 {
@@ -8,6 +10,8 @@ namespace UsersManager.Controllers
     [Route("api/users")]
     public class UsersController(IUsersService service) : ControllerBase
     {
+        UserValidator userValidator = new UserValidator();
+
         [HttpGet]
         public IEnumerable<User> Get()
         {
@@ -21,15 +25,35 @@ namespace UsersManager.Controllers
         }
 
         [HttpPost]
-        public void Add(string userName)
+        public string? Add(User user)
         {
-            service.AddUser(userName);
+            if (user != null)
+            {
+                ValidationResult results = userValidator.Validate(user);
+
+                if (!results.IsValid)
+                {
+                    return results.ToString(" / ");
+                }
+
+                service.AddUser(user);
+                return "Created!";
+            };
+            return "Null user";
         }
 
         [HttpPut("{id}")]
-        public void Update(Guid id, string userName)
+        public string? Update(Guid id, User user)
         {
-            service.UpdateUser(id, userName);
+            ValidationResult results = userValidator.Validate(user);
+
+            if (!results.IsValid)
+            {
+                return results.ToString(" / ");
+            }
+
+            service.UpdateUser(id, user);
+            return "Updated!";
         }
 
         [HttpDelete("{id}")]
