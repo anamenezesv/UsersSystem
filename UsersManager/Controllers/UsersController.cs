@@ -27,19 +27,15 @@ namespace UsersManager.Controllers
         [HttpPost]
         public string? Add(User user)
         {
-            if (user != null)
+            ValidationResult results = userValidator.Validate(user);
+
+            if (!results.IsValid)
             {
-                ValidationResult results = userValidator.Validate(user);
+                return results.ToString(" / ");
+            }
 
-                if (!results.IsValid)
-                {
-                    return results.ToString(" / ");
-                }
-
-                service.AddUser(user);
-                return "Created!";
-            };
-            return "Null user";
+            service.AddUser(user);
+            return "Created!";
         }
 
         [HttpPut("{id}")]
