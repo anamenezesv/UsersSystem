@@ -13,49 +13,65 @@ namespace UsersManager.Controllers
         UserValidator userValidator = new UserValidator();
 
         [HttpGet]
-        public IEnumerable<User> Get()
+        public IActionResult Get()
         {
-            return service.GetUsers();
+            return Ok(service.GetUsers());
         }
 
         [HttpGet("{id}")]
-        public User? GetUser(Guid id)
+        public IActionResult GetUser(Guid id)
         {
-            return service.GetUserById(id);
+            User? user = service.GetUserById(id);
+            return user is null ? NotFound() : Ok(user);
         }
 
         [HttpPost]
-        public string? Add(User user)
+        public IActionResult Add(User user)
         {
             ValidationResult results = userValidator.Validate(user);
 
             if (!results.IsValid)
             {
-                return results.ToString(" / ");
+                return BadRequest(results.Errors);
             }
 
             service.AddUser(user);
-            return "Created!";
+            return Created();
         }
 
         [HttpPut("{id}")]
-        public string? Update(Guid id, User user)
+        public IActionResult Update(Guid id, User user)
         {
             ValidationResult results = userValidator.Validate(user);
 
             if (!results.IsValid)
             {
-                return results.ToString(" / ");
+                return BadRequest(results.Errors);
             }
-
-            service.UpdateUser(id, user);
-            return "Updated!";
+            
+            try
+            {
+                service.UpdateUser(id, user);
+                return Ok();
+            }
+            catch (NullReferenceException)
+            {
+                return NotFound();
+            }
         }
 
         [HttpDelete("{id}")]
-        public void Delete(Guid id)
+        public IActionResult Delete(Guid id)
         {
-            service.DeleteUser(id);
+            try
+            {
+                service.DeleteUser(id);
+                return Ok();
+            }
+            catch (NullReferenceException)
+            {
+                return NotFound();
+            }
         }
     }
 }
