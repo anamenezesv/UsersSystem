@@ -36,14 +36,18 @@ namespace UsersManager.Domain.Services
                 userToUpdate.Aka = user.Aka;
             }
             else
-                throw new Exception();
+                throw new NullReferenceException();
         }
 
         public void DeleteUser(Guid userId)
         {
             var userToDelete = users.FirstOrDefault(u => u.Id == userId);
-            if (userToDelete != null)
-                users.Remove(userToDelete);
+            if (userToDelete is null)
+            {
+                throw new NullReferenceException();
+            }
+
+            users.Remove(userToDelete);
         }
     }
 }
