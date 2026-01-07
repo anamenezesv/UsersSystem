@@ -1,8 +1,8 @@
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using UsersManager.Application;
 using UsersManager.Domain.Entities;
 using UsersManager.Domain.Interfaces;
-using UsersManager.Domain.Services;
 
 namespace UsersManager.Controllers
 {
