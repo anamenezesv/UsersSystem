@@ -23,11 +23,7 @@ jobs:
       
     - name: Build
       run: dotnet build --no-restore
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Test
-        run: dotnet test --no-build --verbosity normal
+      
+    - name: Test
+      if: success()
+      run: dotnet test --no-build --verbosity normal
