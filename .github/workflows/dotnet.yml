@@ -22,7 +22,7 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build --no-restor
+      run: dotnet build --no-restore
       
     - name: Test
       if: success()
