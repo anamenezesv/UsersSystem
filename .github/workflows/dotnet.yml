@@ -35,5 +35,5 @@ jobs:
       
       - name: Test
         run: |
-          cd UsersSystem/UsersManager.Application.Tests
+          cd UsersManager.Application.Tests
           dotnet test --no-build --verbosity normal
