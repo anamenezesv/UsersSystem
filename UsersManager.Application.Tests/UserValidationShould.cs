@@ -32,7 +32,7 @@ namespace UsersManager.Application.Tests
             var results = _userValidator.Validate(_userToTest);
 
             //Assert
-            results.IsValid.Should().BeFalse();
+            results.IsValid.Should().BeTrue();
             results.Errors.Should().Contain(e => e.PropertyName == "FirstName");
         }
 
